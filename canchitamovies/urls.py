@@ -8,4 +8,5 @@ urlpatterns = [
     path('movies/', include('movies.urls'), name='movies'),
     path('users/', include('users.urls'), name='usuarios'),
     path('series/', include('series.urls'), name='series'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
