@@ -1,4 +1,5 @@
 from django.db import models
+from generos.models import Genero
 
 class Movie(models.Model):
     title = models.CharField(max_length=200)
@@ -7,9 +8,19 @@ class Movie(models.Model):
     poster_path = models.URLField()
     external_id = models.CharField(max_length=100, unique=True)
     rating = models.FloatField(default=0.0)
+    duration = models.IntegerField(help_text="Duración en minutos", default=90)
+    generos = models.ManyToManyField(Genero, related_name="movies")
+    trailer_url = models.URLField(blank=True, null=True)
+    director = models.CharField(max_length=200, blank=True, null=True)
+    is_featured = models.BooleanField(default=False)
     
     def __str__(self):
         return self.title
+        
+    class Meta:
+        verbose_name = "Película"
+        verbose_name_plural = "Películas"
+        ordering = ["-release_date"]
 
 class Series(models.Model):
     title = models.CharField(max_length=200)
