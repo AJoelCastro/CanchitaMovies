@@ -21,3 +21,5 @@ class SeriesListView(ListView):
     paginate_by = 12
 
 # Create your views here.
+def menu(request):
+    return render(request,'movies/menu.html')
