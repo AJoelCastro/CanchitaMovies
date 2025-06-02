@@ -22,6 +22,18 @@ class Movie(models.Model):
         verbose_name_plural = "Películas"
         ordering = ["-release_date"]
 
+class WatchList(models.Model):
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    movies = models.ManyToManyField(Movie)
+    series = models.ManyToManyField('series.Series')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Lista de {self.user.username}"
+    
+    class Meta:
+        verbose_name = "Lista de Reproducción"
+        verbose_name_plural = "Listas de Reproducción"
 class Series(models.Model):
     title = models.CharField(max_length=200)
     overview = models.TextField()
@@ -33,9 +45,3 @@ class Series(models.Model):
     
     def __str__(self):
         return self.title
-
-class WatchList(models.Model):
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    movies = models.ManyToManyField(Movie)
-    series = models.ManyToManyField(Series)
-    created_at = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,41 @@
+<!-- Barra de navegación -->
+<nav class="bg-dark-400 shadow-md">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-4">
+                <a href="{% url 'menu' %}" class="text-primary font-bold text-2xl">CanchitaMovies</a>
+            </div>
+            
+            <!-- Menú de navegación -->
+            <div class="hidden md:flex space-x-8">
+                <a href="{% url 'menu' %}" class="text-gray-300 hover:text-primary transition duration-300">Inicio</a>
+                <a href="{% url 'menuMovies' %}" class="text-gray-300 hover:text-primary transition duration-300">Películas</a>
+                <a href="{% url 'menuSeries' %}" class="text-gray-300 hover:text-primary transition duration-300">Series</a>
+                <a href="{% url 'menuGeneros' %}" class="text-gray-300 hover:text-primary transition duration-300">Géneros</a>
+            </div>
+            
+            <!-- Botones de usuario -->
+            <div class="flex items-center space-x-4">
+                {% if user.is_authenticated %}
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-gray-300 hover:text-primary transition duration-300">
+                            <span>{{ user.username }}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-dark-200 rounded-md shadow-lg py-1 z-50 hidden group-hover:block">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-dark-100 hover:text-primary">Mi Perfil</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-dark-100 hover:text-primary">Mi Lista</a>
+                            <a href="{% url 'logout' %}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-dark-100 hover:text-primary">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="{% url 'login' %}" class="text-gray-300 hover:text-primary transition duration-300">Iniciar Sesión</a>
+                    <a href="{% url 'singin' %}" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-red-700 transition duration-300">Registrarse</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,28 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Iniciar Sesión - CanchitaMovies{% endblock %}
+
+{% block content %}
     {% load crispy_forms_tags %}
-    <form action=" " method="POST" class="w-300 h-300">
-        {% csrf_token %}
-        <div class="card w-[50%] mx-auto my-16">
-            <div class="card-body">
-                <h3 class="text-2xl m-4 flex justify-center">Ingrese sus Credenciales</h3>
-                {{ form | crispy }}
-                <div class="flex justify-center gap-8 my-6">
-                    <a href="{% url 'menu' %}" class="">Inicio</a>
-                    <a href="{% url 'singin' %}" >Registrarse</a>
-                    <button class=""> Iniciar Sesion</button>
-                </div>
-                
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-md mx-auto bg-dark-200 rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-center mb-6 text-primary">Iniciar Sesión</h2>
+                <form method="POST" class="space-y-4">
+                    {% csrf_token %}
+                    <div class="bg-dark-100 p-4 rounded-lg">
+                        {{ form|crispy }}
+                    </div>
+                    <div class="flex justify-between items-center mt-6">
+                        <a href="{% url 'singin' %}" class="text-gray-400 hover:text-primary transition duration-300 text-sm">¿No tienes cuenta? Regístrate</a>
+                        <button type="submit" class="bg-primary text-white px-6 py-2 rounded-md hover:bg-red-700 transition duration-300">Iniciar Sesión</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+{% endblock %}
