@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista Película</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans p-6">
+
+  <div class="flex flex-col md:flex-row gap-6">
+    <img src="https://via.placeholder.com/300x200" alt="Imagen película" class="rounded-lg w-full md:w-1/3 object-cover">
+
+    <div class="flex flex-col justify-between bg-gray-100 p-6 rounded-lg w-full">
+      <div>
+        <h1 class="text-2xl font-semibold mb-2">Nombre de la película</h1>
+        <p class="text-sm text-gray-600 mb-2">Año • 2h 10m • Acción, Aventura</p>
+        <p class="text-gray-700 text-sm mb-4">Sinopsis breve de la película o serie. Un resumen atractivo que invite a ver el contenido.</p>
+      </div>
+      <div class="flex gap-4">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded-md">Reproducir</button>
+        <button class="bg-blue-100 text-blue-600 px-4 py-2 rounded-md">Agregar a Mi lista</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap items-center mt-6 text-sm text-gray-600 gap-4">
+    <span>⭐ Calificación 8.7/10</span>
+    <span>Director: <strong>Nombre Director</strong></span>
+    <span>Reparto: Actor 1, Actor 2</span>
+  </div>
+
+  <div class="mt-6 space-y-4">
+    
+    <div class="flex items-center justify-between bg-gray-50 p-4 rounded-lg shadow-sm">
+      <div class="flex items-center gap-4">
+        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">▶</div>
+        <div>
+          <h2 class="font-medium">Episodio 1: El comienzo</h2>
+          <p class="text-sm text-gray-500">45 min • Acción</p>
+        </div>
+      </div>
+      <button class="text-gray-600 hover:text-black text-xl">⬇️</button>
+    </div>
+
+    <div class="flex items-center justify-between bg-gray-50 p-4 rounded-lg shadow-sm">
+      <div class="flex items-center gap-4">
+        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">▶</div>
+        <div>
+          <h2 class="font-medium">Episodio 2: La búsqueda</h2>
+          <p class="text-sm text-gray-500">48 min • Aventura</p>
+        </div>
+      </div>
+      <button class="text-gray-600 hover:text-black text-xl">⬇️</button>
+    </div>
+  </div>
+</body>
+</html>
