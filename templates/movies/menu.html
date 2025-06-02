@@ -1,68 +1,65 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vista Película</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-</head>
-<body class="font-sans p-6">
-  <div class="flex flex-col md:flex-row gap-6">
-    <img
-      src="https://es.digitaltrends.com/wp-content/uploads/2024/03/Jean-Claude-Van-Damme-1.jpg?fit=940%2C530&p=1"
-      alt="Imagen película"
-      class="rounded-lg w-full md:w-1/2 h-[62vh] object-cover"
-    />
 
-    <div class="flex flex-col justify-between rounded-lg w-full md:w-1/2 bg-card p-6">
-      <div>
-        <h1 class="text-2xl font-semibold mb-2 text-primary">
-          Nombre de la película
-        </h1>
-        <p class="text-sm mb-2 text-secondary">Año • 2h 10m • Acción, Aventura</p>
-        <p class="text-sm mb-4 text-secondary">
-          Sinopsis breve de la película o serie. Un resumen atractivo que invite a ver el contenido.
-        </p>
-      </div>
-      <div class="flex gap-4">
-        <button class="btn-primary px-4 py-2 rounded-md">Reproducir</button>
-        <button class="btn-secondary px-4 py-2 rounded-md">Agregar a Mi lista</button>
-      </div>
-    </div>
-  </div>
+{% block title %}Registro - CanchitaMovies{% endblock %}
 
-  <div class="flex flex-wrap items-center mt-6 text-sm text-secondary gap-4">
-    <span>⭐ Calificación 8.7/10</span>
-    <span>
-      Director: <strong class="text-primary">Nombre Director</strong>
-    </span>
-    <span>Reparto: Actor 1, Actor 2</span>
-  </div>
+{% block content %}
+  <div class="p-4">
+    <div class="flex flex-col md:flex-row gap-6">
+      <img
+        src="https://es.digitaltrends.com/wp-content/uploads/2024/03/Jean-Claude-Van-Damme-1.jpg?fit=940%2C530&p=1"
+        alt="Imagen película"
+        class="rounded-lg w-full md:w-1/2 h-[62vh] object-cover"
+      />
 
-  <div class="mt-6 space-y-4">
-    <div class="flex items-center justify-between bg-card p-4 rounded-lg shadow-sm">
-      <div class="flex items-center gap-4">
-        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm" style="background-color: var(--color-blue-primary)">▶</div>
+      <div class="flex flex-col justify-between rounded-lg w-full md:w-1/2 bg-card p-6">
         <div>
-          <h2 class="font-medium text-primary">Episodio 1: El comienzo</h2>
-          <p class="text-sm text-secondary">45 min • Acción</p>
+          <h1 class="text-2xl font-semibold mb-2 text-primary">
+            Nombre de la película
+          </h1>
+          <p class="text-sm mb-2 text-secondary">Año • 2h 10m • Acción, Aventura</p>
+          <p class="text-sm mb-4 text-secondary">
+            Sinopsis breve de la película o serie. Un resumen atractivo que invite a ver el contenido.
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <button class="btn-primary px-4 py-2 rounded-md bg-gray-800">Reproducir</button>
+          <button class="btn-secondary px-4 py-2 rounded-md bg-gray-800">Agregar a Mi lista</button>
         </div>
       </div>
-      <button class="text-secondary hover:text-white text-xl">⬇️</button>
     </div>
 
-    <div class="flex items-center justify-between bg-card p-4 rounded-lg shadow-sm">
-      <div class="flex items-center gap-4">
-        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm" style="background-color: var(--color-blue-primary)">▶</div>
-        <div>
-          <h2 class="font-medium text-primary">Episodio 2: La búsqueda</h2>
-          <p class="text-sm text-secondary">48 min • Aventura</p>
+    <div class="flex flex-wrap items-center mt-6 text-sm text-secondary gap-4">
+      <span>⭐ Calificación 8.7/10</span>
+      <span>
+        Director: <strong class="text-primary">Nombre Director</strong>
+      </span>
+      <span>Reparto: Actor 1, Actor 2</span>
+    </div>
+
+    <div class="mt-6 space-y-4">
+      <div class="flex items-center justify-between bg-card p-4 rounded-lg shadow-sm">
+        <div class="flex items-center gap-4">
+          <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm" style="background-color: var(--color-blue-primary)">▶</div>
+          <div>
+            <h2 class="font-medium text-primary">Episodio 1: El comienzo</h2>
+            <p class="text-sm text-secondary">45 min • Acción</p>
+          </div>
         </div>
+        <button class="text-secondary hover:text-white text-xl">⬇️</button>
       </div>
-      <button class="text-secondary hover:text-white text-xl">⬇️</button>
+
+      <div class="flex items-center justify-between bg-card p-4 rounded-lg shadow-sm">
+        <div class="flex items-center gap-4">
+          <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm" style="background-color: var(--color-blue-primary)">▶</div>
+          <div>
+            <h2 class="font-medium text-primary">Episodio 2: La búsqueda</h2>
+            <p class="text-sm text-secondary">48 min • Aventura</p>
+          </div>
+        </div>
+        <button class="text-secondary hover:text-white text-xl">⬇️</button>
+      </div>
     </div>
   </div>
-</body>
-</html>
+{% endblock %}
