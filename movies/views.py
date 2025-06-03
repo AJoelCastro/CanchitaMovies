@@ -16,4 +16,4 @@ class MovieDetailView(DetailView):
 
 # Create your views here.
 def menu(request):
-    return render(request,'movies/menu.html')
+    return render(request,'movies/listaMovies.html')
